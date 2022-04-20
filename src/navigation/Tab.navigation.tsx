@@ -16,14 +16,13 @@ export default function TabNavigation() {
         tabBarInactiveTintColor: colors.black,
       }}
     >
-      <Tab.Screen
-        name="Perfil"
-        component={PerfilScreen}
-      />
-      <Tab.Screen
-        name="Mensagem"
-        component={PerfilScreen}
-      />
+    <Tab.Screen
+      name="Perfil"
+      component={PerfilScreen}
+      options={{
+       
+      }}
+    />
     </Tab.Navigator>
   );
 }

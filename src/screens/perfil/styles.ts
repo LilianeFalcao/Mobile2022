@@ -9,6 +9,19 @@ const styles = StyleSheet.create({
   },
   fundo:{
     backgroundColor:Colors.perfil
+  },
+  textoPerfil:{
+    width: 93,
+    height: 24,
+    left: 50,
+  },
+  imagem:{
+    width: 100,
+    height: 100,
+    alignItems: 'center',
+    justifyContent:'flex-start',
+    display: 'flex',
+    flexDirection: 'column'
   }
 })
 
