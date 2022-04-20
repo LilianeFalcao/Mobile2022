@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native'
 import colors from '../../styles/colors'
+import { text } from 'stream/consumers';
 
 const styles = StyleSheet.create({
     container:{
@@ -34,6 +35,11 @@ const styles = StyleSheet.create({
     color: colors.white,
     padding: 10,
     width: "80%"
+  },
+  text:{
+    alignItems: 'center',
+    fontSize: 13,
+    color: colors.white,
   }
 })
 

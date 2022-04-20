@@ -7,5 +7,6 @@ export default{
     purple: '#1d1f22',
     orange: '#FFB74D',
     orangeLight: '#FFE9CA',
-    fundo: "#383646"
+    fundo: "#383646",
+    perfil:"B5B2BF"
 }

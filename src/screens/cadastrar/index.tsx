@@ -1,14 +1,13 @@
 import React from "react"
-import{View ,Text, TextInput, KeyboardAvoidingView,ImageBackground,} from 'react-native'
-import { Zocial } from '@expo/vector-icons'; 
-import { Ionicons } from '@expo/vector-icons'; 
+import{View ,Text, TextInput, KeyboardAvoidingView,ImageBackground,} 
+from 'react-native'
 import Button from "../../components/Button";
 import styles from "./styles";
 import { LoginTypes } from "../../types/Screen.types";
 
 export default function Cadastrar({navigation}: LoginTypes) {
     async function handleSignIn() {
-      console.log("Login");
+      console.log("Cadastrar");
     }
     function handleLogin() {
         navigation.navigate("Login");
@@ -21,31 +20,21 @@ export default function Cadastrar({navigation}: LoginTypes) {
           style={styles.container}
         >
           <KeyboardAvoidingView>
-            <Text style={styles.title}>cadastro</Text>
+            <Text style={styles.title}>Cadastre-se</Text>
             <View style={styles.formRow}>
-              <Ionicons name="person" style={styles.icon} />
-              <TextInput style={styles.input} placeholder="Nome" />
+              <TextInput style={styles.input} placeholder="Nome" placeholderTextColor="#FFF"/>
             </View>
             <View style={styles.formRow}>
-              <Zocial name="email" style={styles.icon} />
               <TextInput
                 style={styles.input}
-                placeholder="E-mail"
-                keyboardType="email-address"
-                autoCapitalize="none"
-              />
-            </View>
-            <View style={styles.formRow}>
-              <Ionicons name="key" style={styles.icon} />
-              <TextInput
-                style={styles.input}
-                placeholder="Senha"
+                placeholder="Senha"  placeholderTextColor="#FFF"
                 secureTextEntry={true}
                 autoCapitalize="none"
               />
             </View>
+            <Text style={styles.text}> Não possui cadastro? Cadastre-se  </Text>
             <Button title="cadastro" type="purple" onPress={handleSignIn} />
-            <Button title="Cadastre-se" type="cinza" onPress={handleSignIn} />
+            <Button title="voltar" type="cinza" onPress={handleLogin} />
           </KeyboardAvoidingView>
         </ImageBackground>
       </View>

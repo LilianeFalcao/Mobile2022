@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 30,
-        fontWeight: "bold",
         textAlign: "center",
         color: colors.white,
         marginBottom: 20,
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: colors.white,
-    borderRadius: 5,
+    borderRadius: 5
   },
   icon: {
     fontSize: 20,
@@ -33,7 +32,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: colors.white,
     padding: 10,
-    width: "80%"
+    width: "75%"
+  },
+  text:{
+    alignItems: 'center',
+    fontSize: 13,
+    color: colors.white,
   }
 })
 
