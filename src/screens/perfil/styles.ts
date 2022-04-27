@@ -17,11 +17,7 @@ const styles = StyleSheet.create({
   },
   imagem:{
     width: 100,
-    height: 100,
-    alignItems: 'center',
-    justifyContent:'flex-start',
-    display: 'flex',
-    flexDirection: 'column'
+    height: 100
   }
 })
 

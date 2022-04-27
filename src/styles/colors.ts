@@ -8,5 +8,7 @@ export default{
     orange: '#FFB74D',
     orangeLight: '#FFE9CA',
     fundo: "#383646",
-    perfil:"B5B2BF"
+    perfil:"B5B2BF",
+    pop: "3C3945",
+    postbotao: "3C3945"
 }
