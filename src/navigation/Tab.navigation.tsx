@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { PerfilScreen } from "../screens";
+import { Ionicons } from "@expo/vector-icons";
+import { PerfilScreen, PostsTScreen } from "../screens";
 import colors from "../styles/colors";
 
 const Tab = createBottomTabNavigator();
@@ -20,9 +21,20 @@ export default function TabNavigation() {
       name="Perfil"
       component={PerfilScreen}
       options={{
-       
+        tabBarIcon: () => (
+          <Ionicons name="person" size={24} color={colors.white} />
+        ),
       }}
     />
+    <Tab.Screen
+        name="Posts"
+        component={PostsTScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="chatbubbles" size={24} color={colors.white} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
