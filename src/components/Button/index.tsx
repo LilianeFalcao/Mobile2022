@@ -11,7 +11,10 @@ export default function Button({onPress, title, type, ...rest}:ButtonProps){
           ? styles.butttonBotao
           : type == "orange"
           ? styles.butttonOrange
+          : type == 'postbotao'
+          ? styles.buttonpostbotao
           : styles.butttonPurple
+          
       }
       onPress={onPress}
       {...rest}

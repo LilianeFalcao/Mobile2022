@@ -19,11 +19,12 @@ const styles = StyleSheet.create({
   fundo:{
     backgroundColor:colors.perfil
   },
-
+  input: {
+    width: "80%"
+  },
   icon: {
     fontSize: 24,
-    padding: 5,
-    color: colors.white
+    padding: 5
   }
 })
 

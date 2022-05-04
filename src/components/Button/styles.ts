@@ -23,7 +23,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         padding: 10,
         fontSize: 18
-      }
+      },
+    buttonpostbotao:{
+        backgroundColor:colors.postbotao,
+        borderRadius: 5,
+        margin:10
+    }
 })
 
 export default styles

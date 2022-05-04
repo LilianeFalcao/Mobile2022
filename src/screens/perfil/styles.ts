@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor:Colors.perfil
   },
   fundo:{
     backgroundColor:Colors.perfil
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100
   }
+
 })
 
 export default styles;
