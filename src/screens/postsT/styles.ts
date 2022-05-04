@@ -16,9 +16,14 @@ const styles = StyleSheet.create({
     width: "80%",
     height: 45,
   },
+  fundo:{
+    backgroundColor:colors.perfil
+  },
+
   icon: {
     fontSize: 24,
-    padding: 5
+    padding: 5,
+    color: colors.white
   }
 })
 
