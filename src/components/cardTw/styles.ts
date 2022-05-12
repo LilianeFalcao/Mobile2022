@@ -3,7 +3,7 @@ import colors from "../../styles/colors";
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: colors.black,
+    backgroundColor: colors.Card,
     borderRadius: 5,
     margin: 10,
     alignItems: "center",
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   topic: {
-    backgroundColor: colors.black,
+    backgroundColor: colors.Card,
     margin: 5,
     borderRadius: 5,
     padding: 5

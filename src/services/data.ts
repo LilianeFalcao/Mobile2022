@@ -1,33 +1,45 @@
 export default [
     {
       id: 1,
-      nome: "Lázaro",
-      data: "27/04/2022 10:08:00",
-      titulo: "Blusa",
-      mensagem: "Tenho uma blusa para doar, alguém interessa?",
+      nome: "Suki nako ga megane wo wasureta",
+      data: "27/04/2022",
+      avaliacao: "10/10",
+      consideracoes: "É um mangá de romance escolar muito fofo e relaxante, bom para se destrair em dias cheios",
       topico: [{
         id: 1,
-        item: "Reutilizar"
-      }, {
-        id: 2,
-        item: "Reciclar"
+            item: "Shoujo"
+          }, {
+            id: 2,
+            item: "slice-of-life"
       }]
     },
     {
       id: 2,
-      nome: "Luan",
-      data: "28/04/2022 10:08:00",
-      titulo: "Calça",
-      mensagem: "Tenho uma calça para doar, alguém interessa?",
+      nome: "SpyXfamily",
+      data: "02/02/2022 ",
+      avaliacao: "10/10",
+      consideracoes: "é extremamente engraçado e divertido",
       topico: [{
         id: 1,
-        item: "Reutilizar"
+        item: "Ação"
       }, {
         id: 2,
-        item: "Reciclar"
-      }, {
-        id: 3,
-        item: "Doar"
+        item: "Comédia"
       }]
     },
+    {
+      id: 1,
+      nome: "Kowloon Generic Romance",
+      data: "01/03/2022 ",
+      avaliacao: "10/10",
+      consideracoes: "Um mangá surpreendente, espero que continuem lançando",
+      topico: [{
+        id: 1,
+        item: "romance"
+      }, {
+        id: 2,
+        item: "sci-fi"
+      }]
+    },
+    
   ]

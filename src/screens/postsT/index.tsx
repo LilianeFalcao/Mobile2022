@@ -14,8 +14,6 @@ import Card from "../../components/cardTw";
 export default function Post() {
   const renderItem = ({ item }: any) => <Card data={item} />;
   return (
-    <ImageBackground source={require("../../assets/fundo.png")}
-    style={styles.container}>
       <SafeAreaView style={styles.container}>
         <View>
           <FontAwesome5 name="search" size={24} color="black" />
@@ -27,6 +25,5 @@ export default function Post() {
           keyExtractor={(item) => String(item.id)}
         />
       </SafeAreaView>
-    </ImageBackground>
   );
 }

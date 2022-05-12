@@ -10,9 +10,8 @@ export default function Perfil(){
             <View>
             <Image  style={styles.imagem} source={require("../../assets/Linn.png")} />
             </View>
-            <Text> Linn </Text>
-            <Text style={styles.textoPerfil}> descrição </Text>
-            <Button  title="+" type="postbotao"  onPress={() => console.log("postar")} />
+            <Text style={styles.textoPerfil}> Linn </Text>
+            <Button title="+" type="postbotao" onPress={() => console.log("postar")} />
             </View>
         </View>
     );

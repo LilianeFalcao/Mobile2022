@@ -10,8 +10,8 @@ export default function Card({ data }: CardProps) {
         {data.nome} - {data.data}
       </Text>
       <View>
-        <Text>Título: {data.titulo}</Text>
-        <Text>Mensagem: {data.mensagem}</Text>
+        <Text>Avaliação: {data.avaliacao}</Text>
+        <Text>Considerações: {data.consideracoes}</Text>
         <View style={styles.topicos}>
           {data.topico.map((i) => (
             <View key={i.id} style={styles.topic}>

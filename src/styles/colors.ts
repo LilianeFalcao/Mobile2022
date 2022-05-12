@@ -10,5 +10,6 @@ export default{
     fundo: "#383646",
     perfil:"#B5B2BF",
     pop: "#3C3945",
-    postbotao: "#3C3945"
+    postbotao: "#3C3945",
+    Card: "#777382"
 }

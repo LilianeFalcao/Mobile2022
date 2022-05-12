@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import  colors  from '../../styles/colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor:Colors.perfil
+    backgroundColor: colors.perfil,
   },
   fundo:{
-    backgroundColor:Colors.perfil
+    backgroundColor:colors.perfil
   },
   textoPerfil:{
     width: 93,
@@ -17,10 +17,9 @@ const styles = StyleSheet.create({
     left: 50,
   },
   imagem:{
-    width: 100,
-    height: 100
+    alignItems: "center",
+    justifyContent: "center"
   }
-
 })
 
 export default styles;
