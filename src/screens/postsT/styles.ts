@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     height: 45,
   },
   input: {
-    width: "80%"
+    width: "95%"
   },
   icon: {
     fontSize: 24,
