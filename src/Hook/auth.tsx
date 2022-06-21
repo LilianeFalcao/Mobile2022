@@ -5,8 +5,8 @@ import React, {
     useState,
     useEffect,
 } from "react";
-import { apiUser } from "../interfaces/User.interface";
-import api from "../services/api";
+import { apiUser } from "../services/data";
+import api from "../services/data/api";
 import { IAuthState, IAuthContextData } from "../interfaces/User.interface";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -43,14 +43,14 @@ const AuthProvider: React.FC = ({ children }) => {
     }, []);
 
     const removeLocalStorage = async () => {
-        await AsyncStorage.setItem("access_token");
-        await AsyncStorage.setItem("user");
+        await AsyncStorage.removeItem("access_token");
+        await AsyncStorage.removeItem("user");
     };
 
     const signOut = useCallback(async () => {
         setAuth({} as IAuthState);
         removeLocalStorage();
-        delete api.defaults.headers.common.Authorization;
+        delete api.defaults.headers.common.authorization;
         await apiUser.logout();
     }, []);
 
@@ -93,4 +93,4 @@ function useAuth(): IAuthContextData {
 
     return context;
 }
-export {AuthProvider, useAuth};
+export { AuthProvider, useAuth };

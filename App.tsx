@@ -5,7 +5,7 @@ import {AuthProvider} from "./src/Hook/auth";
 export default function App() {
   return (
     <AuthProvider>
-      <Navigation />;
+      <Navigation />
     </AuthProvider>
   );
 }

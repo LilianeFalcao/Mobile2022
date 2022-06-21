@@ -7,11 +7,11 @@ export default function Card({ data }: CardProps) {
   return (
     <View style={styles.card}>
       <Text>
-        {data.nome} - {data.data}
+        <>{data.nome} - {data.data}</>
       </Text>
       <View>
-        <Text>Avaliação: {data.avaliacao}</Text>
-        <Text>Considerações: {data.consideracoes}</Text>
+        <Text><>Avaliação: {data.avaliacao}</></Text>
+        <Text><>Considerações: {data.consideracoes}</></Text>
         <View style={styles.topicos}>
           {data.topico.map((i) => (
             <View key={i.id} style={styles.topic}>
