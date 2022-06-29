@@ -1,9 +1,17 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import {
+     View,
+     Text,
+     Image 
+} from "react-native";
 import styles from "./styles";
-import Button from "../../components/Button"
+import Button from "../../components/Button";
+import { useAuth } from "../../Hook/auth";
+
 
 export default function Perfil() {
+    const{ user } = useAuth();
+
     return (
         <View style={styles.container}>
             <View style={styles.fundo}>
