@@ -64,7 +64,9 @@ export default function Login({ navigation }: LoginTypes) {
           <Text style={styles.title}> Faça Login</Text>
           <View style={styles.formRow}>
             <TextInput style={styles.input} placeholder="Nome" 
-            placeholderTextColor="#FFF"/>
+            placeholderTextColor="#FFF"
+            onChangeText={(i) => handleChange({ name: i })}
+            />
           </View>
           <View style={styles.formRow}>
             <TextInput
