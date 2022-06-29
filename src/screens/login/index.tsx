@@ -22,7 +22,7 @@ export default function Login({ navigation }: LoginTypes) {
   async function handleSignIn() {
     try {
       setIsLoading(true);
-      if (data?.email && data.password) {
+      if (data?.name && data.password) {
         await signIn(data);
       } else {
         Alert.alert("Preencha todos os campos! ");
@@ -65,15 +65,6 @@ export default function Login({ navigation }: LoginTypes) {
           <View style={styles.formRow}>
             <TextInput style={styles.input} placeholder="Nome" 
             placeholderTextColor="#FFF"/>
-          </View>
-          <View style={styles.formRow}>
-            <TextInput
-              style={styles.input}
-              placeholder="E-mail" placeholderTextColor="#FFF"
-              keyboardType="email-address"
-              autoCapitalize="none"
-              onChangeText={(i) => handleChange({ email: i })}
-            />
           </View>
           <View style={styles.formRow}>
             <TextInput

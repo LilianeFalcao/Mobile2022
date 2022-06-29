@@ -4,7 +4,7 @@ export interface IRegister {
     password?: string;
 }
 export interface IAuthenticate {
-    email?: string;
+    name?: string;
     password?: string;
 }
 export interface IUser {

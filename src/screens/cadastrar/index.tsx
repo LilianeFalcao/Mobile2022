@@ -79,6 +79,15 @@ export default function Cadastrar({ navigation }: LoginTypes) {
           <View style={styles.formRow}>
             <TextInput
               style={styles.input}
+              placeholder="E-mail" placeholderTextColor="#FFF"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              onChangeText={(i) => handleChange({ email: i })}
+            />
+          </View>
+          <View style={styles.formRow}>
+            <TextInput
+              style={styles.input}
               placeholder="Senha" placeholderTextColor="#FFF"
               secureTextEntry={true}
               autoCapitalize="none"
