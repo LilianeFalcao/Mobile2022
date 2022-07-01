@@ -4,12 +4,12 @@ export interface IRegister {
     password?: string;
 }
 export interface IAuthenticate {
-    name?: string;
+    email?: string;
     password?: string;
 }
 export interface IUser {
-    status: string;
-    message: string;
+    status: string,
+    message: string,
     data: {
         access_token: string,
         user: {
@@ -17,7 +17,7 @@ export interface IUser {
             name: string,
             email: string,
             profile_photo_url: string
-        }
+         }
     }
 }
 export interface IAuthState {
@@ -29,11 +29,12 @@ export interface IAuthState {
         profile_photo_url: string
     }
 }
+
 export interface IAuthContextData {
     register(credentials: IRegister): Promise<void>;
     signIn(credentials: IAuthenticate): Promise<void>;
     signOut(): Promise<void>;
-    access_token?: string,
+    access_token?: string;
     user?: {
         id: number,
         name: string,

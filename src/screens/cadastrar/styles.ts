@@ -1,6 +1,10 @@
 import {StyleSheet} from 'react-native'
 import colors from '../../styles/colors'
 
+
+// async function handleSignIn() {
+//  console.log("Cadastrar");
+//}
 const styles = StyleSheet.create({
     container:{
       flex: 1,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -6,7 +6,8 @@ import {
   KeyboardAvoidingView,
   ImageBackground,
   Alert,
-} from 'react-native';
+} from "react-native";
+import { MaterialIcons, Entypo } from "@expo/vector-icons";
 import Button from "../../components/Button";
 import styles from "./styles";
 import { LoginTypes } from "../../types/Screen.types";
@@ -18,14 +19,20 @@ export default function Login({ navigation }: LoginTypes) {
   const { signIn } = useAuth();
   const [data, setData] = useState<IAuthenticate>();
   const [isLoading, setIsLoading] = useState(true);
+  function handleCadastrar() {
+    navigation.navigate("Cadastrar");
+  }
 
+  function handleChange(item: IAuthenticate) {
+    setData({ ...data, ...item });
+  }
   async function handleSignIn() {
     try {
       setIsLoading(true);
-      if (data?.name && data.password) {
+      if (data?.email && data.password) {
         await signIn(data);
       } else {
-        Alert.alert("Preencha todos os campos! ");
+        Alert.alert("Preencha todos os campos!!!");
         setIsLoading(false);
       }
     } catch (error) {
@@ -42,17 +49,9 @@ export default function Login({ navigation }: LoginTypes) {
     }
   }
 
-  function handleChange(item: IAuthenticate) {
-    setData({ ...data, ...item });
-  }
-
   useEffect(() => {
     setIsLoading(false);
   }, []);
-
-  function handleCadastrar() {
-    navigation.navigate("Cadastrar");
-  }
 
   return (
     <View style={styles.container}>
@@ -63,9 +62,9 @@ export default function Login({ navigation }: LoginTypes) {
         <KeyboardAvoidingView>
           <Text style={styles.title}> Faça Login</Text>
           <View style={styles.formRow}>
-            <TextInput style={styles.input} placeholder="Nome" 
-            placeholderTextColor="#FFF"
-            onChangeText={(i) => handleChange({ name: i })}
+            <TextInput style={styles.input} placeholder="Nome"
+              placeholderTextColor="#FFF"
+              onChangeText={(i) => handleChange({ email: i })}
             />
           </View>
           <View style={styles.formRow}>
