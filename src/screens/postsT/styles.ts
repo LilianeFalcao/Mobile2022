@@ -16,13 +16,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: "80%",
     height: 45,
+    padding: 5
   },
   input: {
     width: "95%"
   },
   icon: {
     fontSize: 24,
-    padding: 5
+    padding: 5,
+    color: colors.white
   }
 })
 
