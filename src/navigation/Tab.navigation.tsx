@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { PerfilScreen, PostsTScreen, MapScreen, SairScreen} from "../screens";
+import { PerfilScreen, PostsTScreen, MapScreen, SairScreen, QrCodeScreen} from "../screens";
 import colors from "../styles/colors";
 
 const Tab = createBottomTabNavigator();
@@ -50,6 +50,16 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <Ionicons name="exit" size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="QrCode"
+        component={QrCodeScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="qr-code-outline" 
+            size={24} color={colors.white} />
           ),
         }}
       />

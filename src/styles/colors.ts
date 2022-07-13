@@ -11,5 +11,6 @@ export default{
     perfil:"#B5B2BF",
     pop: "#3C3945",
     postbotao: "#3C3945",
-    Card: "#777382"
+    Card: "#777382",
+    qrCode: "#383646"
 }
