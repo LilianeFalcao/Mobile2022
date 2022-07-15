@@ -18,6 +18,9 @@ export default function Perfil({ navigation }: LoginTypes) {
   function handleMap() {
     navigation.navigate("Map");
   }
+  function handleQrCode() {
+    navigation.navigate("QrCode");
+  }
   
   return (
     <View style={styles.container}>
@@ -27,6 +30,7 @@ export default function Perfil({ navigation }: LoginTypes) {
       </View>
       <View style={styles.input}>
         <Button title="endereço" type= "purple" onPress={handleMap} />
+        <Button title="QrCode" type= "purple" onPress={handleQrCode} />
         <Button title="Publicar" type="purple" onPress={handleSignIn} />
         <Button title="Voltar" type="purple" onPress={handleLogin} />  
       </View>
