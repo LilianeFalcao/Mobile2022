@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { PerfilScreen, PostsTScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen} from "../screens";
+import { PerfilScreen, PostsTScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen} from "../screens";
 import colors from "../styles/colors";
 
 const Tab = createBottomTabNavigator();
@@ -73,6 +73,17 @@ export default function TabNavigation() {
           ),
         }}
       />
+       <Tab.Screen
+        name="Arquivo"
+        component={ArquivoScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="file-tray-outline" 
+            size={24} color={colors.white} />
+          ),
+        }}
+      />
     </Tab.Navigator>
+    
   );
 }

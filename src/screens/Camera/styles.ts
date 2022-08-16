@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     buttonStartOver:{
         width:130,
         borderRadius: 4,
-        backgroundColor: colors.cinza,
+        backgroundColor: colors.white,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
