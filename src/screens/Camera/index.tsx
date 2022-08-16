@@ -46,8 +46,10 @@ export default function App() {
                         Alert.alert("Erro ao salvar");
                     })
             } catch (error) {
-                Alert.alert("sem permissões para acessar os arquivos");
+                Alert.alert(String(error));
             }
+        }else{
+            Alert.alert("Sem permissão para acessar os arquivos");
         }
     };
     return (
