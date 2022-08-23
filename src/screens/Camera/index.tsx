@@ -34,24 +34,24 @@ export default function App() {
         setCapturedImage(photo);
     };
     const __savePhoto = async () => {
-        const permission = await MediaLibrary.requestPermissionsAsync();
+        const permission = await MediaLibrary.requestPermissionsAsync()
         if (permission.granted) {
             try {
-                const asset = await MediaLibrary.createAssetAsync(capturedImage.uri);
+                const asset = await MediaLibrary.createAssetAsync(capturedImage.uri)
                 MediaLibrary.createAlbumAsync("Images", asset, false)
                     .then(() => {
-                        Alert.alert("imagem salva com sucesso");
+                        Alert.alert("Imagem salva com sucesso!")
                     })
                     .catch(() => {
-                        Alert.alert("Erro ao salvar");
+                        Alert.alert("Erro ao salvar a imagem!")
                     })
             } catch (error) {
-                Alert.alert(String(error));
+                Alert.alert(String(error))
             }
-        }else{
-            Alert.alert("Sem permissão para acessar os arquivos");
+        } else {
+            Alert.alert("Sem permissão para acessar os arquivos")
         }
-    };
+    }
     return (
         <View style={styles.container}>
             {startOver ? (
