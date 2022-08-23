@@ -79,8 +79,8 @@ export default function App() {
                                         <Text style={styles.textPreviewVisible}> Nova foto </Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity
-                                        onPress={() => setPreviewVisible(false)}
-                                        style={styles.buttonPreviewVisible}
+                                        onPress={__savePhoto}
+                                        style={styles.buttonSavePhoto}
                                     >
                                         <Text style={styles.textPreviewVisible}> salva a foto  </Text>
                                     </TouchableOpacity>
