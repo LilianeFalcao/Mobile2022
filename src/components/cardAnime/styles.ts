@@ -10,7 +10,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "90%",
     height: 45,
-  }
+  },
+  img:{
+    width: 100,
+    height: 100,
+  },
 })
 
 export default styles
