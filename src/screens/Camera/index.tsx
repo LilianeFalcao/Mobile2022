@@ -51,7 +51,7 @@ export default function App() {
         } else {
             Alert.alert("Sem permissão para acessar os arquivos")
         }
-    }
+    };
     return (
         <View style={styles.container}>
             {startOver ? (
