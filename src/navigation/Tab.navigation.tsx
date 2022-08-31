@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { PerfilScreen, PostsTScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen} from "../screens";
 import colors from "../styles/colors";
+import PostNavigation from "./post.navigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -28,8 +29,9 @@ export default function TabNavigation() {
     />
     <Tab.Screen
         name="Posts"
-        component={PostsTScreen}
+        component={PostNavigation}
         options={{
+          title: "Post",
           tabBarIcon: () => (
             <Ionicons name="chatbubbles" size={24} color={colors.white} />
           ),

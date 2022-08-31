@@ -11,18 +11,20 @@ import {
 } from "react-native";
 import styles from "./styles";
 import { Camera } from "expo-camera";
-import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { PostTypes } from "../../types/Screen.types";
 import { AxiosError } from "axios";
 import { IResponse } from "../../interfaces/Response.interface";
 import { apiMensagem, apiTopico } from "../../services/data";
-import { ITopico, ITopicoServer, ITopicoState } from "../../interfaces/Topico.interface";
-import * as MediaLibrary from "expo-media-library";
+import { ITopicoServer, ITopicoState } from "../../interfaces/Topico.interface";
 import { IMensagem } from "../../interfaces/Mensagem.interface";
 import * as ImagePicker from "expo-image-picker";
 import Loading from "../../components/Loading";
+import colors from "../../styles/colors";
+import Button from "../../components/Button";
 
 export default function EnviarMensagem({ navigation }: PostTypes) {
+
     const [data, setData] = useState<IMensagem>();
     const [isLoading, setIsLoading] = useState(true);
     const [topico, setTopico] = useState<ITopicoState[]>([]);
@@ -110,7 +112,7 @@ export default function EnviarMensagem({ navigation }: PostTypes) {
 
     return (
         <>
-            {isLoading ? (
+              {isLoading ? (
                 <Loading />
             ) : (<ImageBackground
                 source={require("../../assets/fundo.png")}
@@ -131,10 +133,92 @@ export default function EnviarMensagem({ navigation }: PostTypes) {
                             onChangeText={(i) => handleChange({ message: i })}
                         />
                         <View style={styles.select}>
-                            
+                            <MultiSelect
+                                items={topico}
+                                uniqueKey="id"
+                                selectText="Selecione os topicos"
+                                onSelectedItemsChange={(i) => setSelectedTopico(i)}
+                                selectedItems={selectedTopico}
+                                selectedItemTextColor={colors.cinza}
+                                tagBorderColor={colors.cinza}
+                                tagTextColor={colors.cinza}
+                                submitButtonColor={colors.cinza}
+                                styleDropdownMenu={styles.selectTopico}
+                                styleInputGroup={styles.selectTopico}
+                            />
                         </View>
+                        <View style={styles.imagem}>
+                            <TouchableOpacity
+                                style={styles.buttonImage}
+                                onPress={() => setStartOver(false)}
+                            >
+                                <Ionicons name="camera" size={24} color="black" />
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.buttonImage}
+                                onPress={pickImage}
+                            >
+                                <Ionicons name="image" size={24} color="black" />
+                            </TouchableOpacity>
+                            {data?.imagem && (
+                                <Image source={{ uri: data.imagem.uri }} style={styles.img} />
+                            )}
+                        </View>
+                        <Button
+                            title="Salvar"
+                            type="cinza"
+                            onPress={handleSubmit}
+                        />
+                        <Button
+                            title="Voltar"
+                            type="postbotao"
+                            onPress={handleVoltar}
+                        />
                     </KeyboardAvoidingView>
+                ) : (
+                    <Camera
+                        style={styles.container}
+                        type={type}
+                        ref={(r) => {
+                            if (r) camera = r;
+                        }}
+                    >
+                        <View style={styles.buttonTop}>
+                            <View style={styles.buttonTopPosition}>
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        setStartOver(true);
+                                        console.log("clicou");
+                                    }}
+                                >
+                                    <Text style={styles.textClose}> X </Text>
+                                </TouchableOpacity>
+                            </View>
+                            <TouchableOpacity
+                                style={styles.buttonFlip}
+                                onPress={() => {
+                                    setType(
+                                        type === Camera.Constants.Type.back
+                                            ? Camera.Constants.Type.front
+                                            : Camera.Constants.Type.back
+                                    );
+                                }}
+                            >
+                                <Text style={styles.textFlip}> Inverter </Text>
+                            </TouchableOpacity>
+                            <View style={styles.viewTakePicture}>
+                                <View style={styles.positionTakePicture}>
+                                    <TouchableOpacity
+                                        onPress={takePicture}
+                                        style={styles.buttonTakePicture}
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                    </Camera>
                 )}
-                )}
-        )
+            </ImageBackground>
+            )}
+        </>
+    );
 }
