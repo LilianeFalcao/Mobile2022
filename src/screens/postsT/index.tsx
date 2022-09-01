@@ -8,11 +8,11 @@ import {
   View,
 } from "react-native";
 import styles from "./styles";
-import { FontAwesome5 } from "@expo/vector-icons";
-import { Card, Loading } from "../../components";
-import data from "../../services/data_antigo";
+import { Ionicons } from "@expo/vector-icons";
+import Card from "../../components/cardAnime";
+import Loading from "../../components/Loading"
 import { PostTypes } from "../../types/Screen.types";
-import { apiMensagem } from "../../services/data";
+import { apiMensagem } from "../../services/data/Mensagem";
 import { IMensagemState } from "../../interfaces/Mensagem.interface";
 
 export default function Post({ navigation }: PostTypes) {
@@ -37,27 +37,27 @@ export default function Post({ navigation }: PostTypes) {
       {isLoading ? (
         <Loading />
       ) : (
-          <ImageBackground source={require("../../assets/fundo.png")}
-            style={styles.container}
-          >
-            <SafeAreaView style={styles.container}>
-              <View style={styles.rowSearch}>
-                <FontAwesome5 name="search" styles={styles.icon} />
-                <TextInput placeholder="Pesquisar Post" />
-              </View>
-              {mensagem.length > 0 && (
-                <FlatList
-                  data={mensagem}
-                  renderItem={renderItem}
-                  keyExtractor={(item) => String(item.id)}
-                />
-              )}
-              <TouchableOpacity style={styles.button} onPress={handlePost}>
-                <Text style={styles.buttonText}>+</Text>
-              </TouchableOpacity>
-            </SafeAreaView>
-          </ImageBackground>
-        )}
+        <ImageBackground source={require("../../assets/fundo.png")}
+          style={styles.container}
+        >
+          <SafeAreaView style={styles.container}>
+            <View style={styles.rowSearch}>
+              <Ionicons name="search" styles={styles.icon} />
+              <TextInput placeholder="Pesquisar Post" />
+            </View>
+            {mensagem.length > 0 && (
+              <FlatList
+                data={mensagem}
+                renderItem={renderItem}
+                keyExtractor={(item) => String(item.id)}
+              />
+            )}
+            <TouchableOpacity style={styles.button} onPress={handlePost}>
+              <Text style={styles.buttonText}> + </Text>
+            </TouchableOpacity>
+          </SafeAreaView>
+        </ImageBackground>
+      )}
     </>
   );
 }
