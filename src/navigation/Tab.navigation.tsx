@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { PerfilScreen, PostsTScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen} from "../screens";
+import { PerfilScreen, VideoAudioScreen, PostsTScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen} from "../screens";
 import colors from "../styles/colors";
 import PostNavigation from "./post.navigation";
 
@@ -81,6 +81,16 @@ export default function TabNavigation() {
         options={{
           tabBarIcon: () => (
             <Ionicons name="file-tray-outline" 
+            size={24} color={colors.white} />
+          ),
+        }}
+      />
+       <Tab.Screen
+        name="video"
+        component={VideoAudioScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="play" 
             size={24} color={colors.white} />
           ),
         }}

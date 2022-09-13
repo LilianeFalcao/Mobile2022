@@ -17,7 +17,7 @@ export type PostStackParamList = {
   Post: undefined,
   EnviarMensagem: undefined
 }
-type PostScreenNavigationProp = StackNavigationProp<LoginStackParamList, 'Login'>
+type PostScreenNavigationProp = StackNavigationProp<PostStackParamList, 'Post'>
 export type PostTypes = {
   navigation: PostScreenNavigationProp
 }
