@@ -6,13 +6,14 @@ import {
   SafeAreaView,
   TextInput,
   View,
+  Text,
 } from "react-native";
 import styles from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 import Card from "../../components/cardAnime";
 import Loading from "../../components/Loading"
 import { PostTypes } from "../../types/Screen.types";
-import { apiMensagem } from "../../services/data/Mensagem";
+import { apiMensagem } from "../../services/data";
 import { IMensagemState } from "../../interfaces/Mensagem.interface";
 
 export default function Post({ navigation }: PostTypes) {

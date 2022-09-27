@@ -11,6 +11,9 @@ class UserData {
     logout(){
         return api.get('/logout');
     }
+    updateToken(token: string){
+        return api.put('/user', {token});
+    }
 }
 
 export default new UserData();

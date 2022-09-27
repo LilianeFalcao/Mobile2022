@@ -22,6 +22,7 @@ import { IMensagem } from "../../interfaces/Mensagem.interface";
 import * as ImagePicker from "expo-image-picker";
 import Loading from "../../components/Loading";
 import colors from "../../styles/colors";
+import MultiSelect from "react-native-multiple-select";
 import Button from "../../components/Button";
 
 export default function EnviarMensagem({ navigation }: PostTypes) {
