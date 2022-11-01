@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { PerfilScreen,PedometroScreen, VideoAudioScreen, AcelerometroScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen} from "../screens";
+import { PerfilScreen,PedometroScreen, VideoAudioScreen, GyroscopioScreen, MagnetoScreen, AcelerometroScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen} from "../screens";
 import colors from "../styles/colors";
 import PostNavigation from "./post.navigation";
 
@@ -13,7 +13,7 @@ export default function TabNavigation() {
       screenOptions={{
         headerShown: false,
         tabBarActiveBackgroundColor: colors.purple,
-        tabBarActiveTintColor: colors.black,
+        tabBarActiveTintColor: colors.white,
         tabBarInactiveBackgroundColor: colors.perfil,
         tabBarInactiveTintColor: colors.black,
       }}
@@ -36,61 +36,13 @@ export default function TabNavigation() {
             <Ionicons name="chatbubbles" size={24} color={colors.white} />
           ),
         }}
-      />
-       <Tab.Screen
-        name="Map"
-        component={MapScreen}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="map" size={24} color={colors.white} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Sair"
-        component={SairScreen}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="exit" size={24} color={colors.white} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="QrCode"
-        component={QrCodeScreen}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="qr-code-outline" 
-            size={24} color={colors.white} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Camera"
-        component={CameraScreen}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="camera" 
-            size={24} color={colors.white} />
-          ),
-        }}
-      />
+      />  
       <Tab.Screen
         name="Pedometro"
         component={PedometroScreen}
         options={{
           tabBarIcon: () => (
             <Ionicons name="camera" 
-            size={24} color={colors.white} />
-          ),
-        }}
-      />
-       <Tab.Screen
-        name="Arquivo"
-        component={ArquivoScreen}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons name="file-tray-outline" 
             size={24} color={colors.white} />
           ),
         }}
@@ -112,6 +64,35 @@ export default function TabNavigation() {
           tabBarIcon: () => (
             <Ionicons name="car" 
             size={24} color={colors.white} />
+          ),
+        }}
+      />
+        <Tab.Screen
+        name="Magnetometro"
+        component={MagnetoScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="magnet" 
+            size={24} color={colors.white} />
+          ),
+        }}
+      />
+       <Tab.Screen
+        name="Gyroscopio"
+        component={GyroscopioScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="nuclear" 
+            size={24} color={colors.white} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Sair"
+        component={SairScreen}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="exit" size={24} color={colors.white} />
           ),
         }}
       />
